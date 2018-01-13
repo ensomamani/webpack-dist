@@ -79,7 +79,8 @@ var Aninal = function Aninal() {
 };
 
 var enso = 'ruben';
-var origin = 'git';
-var origin2 = 'git';
+var origin = 'github';
+var origin2 = 'github';
+
 /***/ })
 /******/ ]);
