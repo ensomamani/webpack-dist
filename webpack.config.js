@@ -28,7 +28,7 @@ module.exports = {
         new BrowserSyncPlugin({
             host: 'localhost',
             port: '3000',
-            server: { baseDir: ['dist']},
+            server: { baseDir: ['dev']},
             files: ['./dist/index.html','./dist/css','./dist/js']
         })
     ], //son complementos que pueden mejorar en la optimizacion de paquetes y minificar
