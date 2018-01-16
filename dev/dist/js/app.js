@@ -57,7 +57,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "F:\\Practicas\\Web\\webpack.config\\dev\\dist";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 0);
@@ -67,10 +67,23 @@
 /* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(1);
+
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/* Programacion */
+
+//const css = require('../css/style.css');//utiliza el css como referencia para dar estilos al html(dentro de dist)
+var scss = __webpack_require__(2); //se encuentra fuera de dist para separarlo del css 
+
 
 var num = 6;
 
@@ -80,7 +93,14 @@ var Aninal = function Aninal() {
 
 var enso = 'ruben';
 var origin = 'github';
-var origin2 = 'github';
+var origin2 = 'githu6';
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);
+//# sourceMappingURL=app.js.map

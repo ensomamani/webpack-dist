@@ -1,24 +1,32 @@
-
+/*modules para browser-sync*/
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin'); //browser-sync + webpack
+
 const path = require('path'),
-      endPath = path.resolve(__dirname, 'dev/js'),
-      ExtractTextPlugin = require("extract-text-webpack-plugin"); //Instanciar el inicio y final del camino
+    endPath = path.resolve(__dirname, 'dev/dist'), //Instanciar el inicio y final del camino
+    publicPath = path.resolve(__dirname, 'dev/dist');
 
-const extractSass = new ExtractTextPlugin({
-    filename: "[name].[contenthash].css",
-    disable: process.env.NODE_ENV === "development"
-});
 
-    
+/* MODULE PARA SASS */
+const endPathcss = path.resolve(__dirname, 'dev/css'),
+    // extractSass = new ExtractTextPlugin({
+    //     filename: "[name].[contenthash].css",
+    //     disable: process.env.NODE_ENV === "development"
+    // }),
+    ExtractTextPlugin = require("extract-text-webpack-plugin");
+// const css = require('!css-loader!resolve-url-loader!sass-loader?sourceMap!./dev/scss/header.scss');
+
+//---------------------------------------
 module.exports = {
     resolve: {
-        extensions: [".js",".json",".css"]
+        extensions: [".js", ".json", ".css"]
     },
-    entry: './dev/es6/app.js', //entrada del archivo a compilar
+    entry: ['./dev/dist/es6/app.js'], //entrada del archivo a compilar
     output: {
         path: endPath, //salida del archivo a compilar
-        filename: 'app.js' //nombre del archivo final compilado
+        filename: 'js/app.js', //nombre del archivo final compilado
+        publicPath: publicPath
     },
+    devtool: "source-map",
     // devServer:{ //servidor para local para visualizar la programacion
     //     contentBase: path.join(__dirname, "dist"),
     //     compress: true,
@@ -26,16 +34,38 @@ module.exports = {
     // },
     module: {
         rules: [
-            {   test: /\.js$/, 
-                exclude: /node_modules/, 
-                use:"babel-loader"
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: "babel-loader"
             }, //procesa el tipo de archivo que compila
-            {   test:/\.css$/,
+            // {
+            //     test: /\.css$/,
+            //     use: [{
+            //         loader: 'style-loader'
+            //     },
+            //     {
+            //         loader: 'css-loader'
+            //     }
+            //     ]
+            // },
+            {
+                test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
-                    use: "css-loader"
+                    use: [
+                        {
+                            loader: 'css-loader'
+                        },
+                        {
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: true
+                            }
+                        }
+                    ],
+                    publicPath: 'dev/dist/css' //aqui es donde se asegura que el archivo va compilar 
                 })
-            
             }
         ]
     },
@@ -43,9 +73,11 @@ module.exports = {
         new BrowserSyncPlugin({
             host: 'localhost',
             port: '3000',
-            server: { baseDir: ['dev']},
-            files: ['./dist/index.html','./dist/css','./dist/js']
+            server: { baseDir: ['dev/dist'] },
+            files: ['./dev/dist/index.html', './dev/dist/js/app.js']
         }),
-        new ExtractTextPlugin("./dev/css/style.css")
-    ], //son complementos que pueden mejorar en la optimizacion de paquetes y minificar
+        new ExtractTextPlugin({
+            filename: 'css/style.css'
+        })
+    ] //son complementos que pueden mejorar en la optimizacion de paquetes y minificar
 }
