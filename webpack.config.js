@@ -1,37 +1,48 @@
 /*modules para browser-sync*/
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin'); //browser-sync + webpack
-
-const path = require('path'),
-    endPath = path.resolve(__dirname, 'dev/dist'), //Instanciar el inicio y final del camino
-    publicPath = path.resolve(__dirname, 'dev/dist');
-
-
+const path = require('path');//Instanciar el inicio y final del camino
+/* html-webpack-plugin*/
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+//       webpackConfig = {
+//         entry: './dev/src/index.html',
+//         output: {
+//             path: path.resolve(__dirname,'./dev/dist'),
+//             filename: '/js/app.js'
+//         },
+//     plugins : [
+//         new HtmlWebpackPlugin({
+//             title: 'Webpack',
+//             template: './dev/src/index.html',
+//             minify: {
+//                 caseSensitive: true
+//             },
+//             hash: true,
+//             chunks: true,
+//             xhtml: true
+//         })
+//     ]
+// };
 /* MODULE PARA SASS */
-const endPathcss = path.resolve(__dirname, 'dev/css'),
-    // extractSass = new ExtractTextPlugin({
-    //     filename: "[name].[contenthash].css",
-    //     disable: process.env.NODE_ENV === "development"
-    // }),
-    ExtractTextPlugin = require("extract-text-webpack-plugin");
-// const css = require('!css-loader!resolve-url-loader!sass-loader?sourceMap!./dev/scss/header.scss');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 //---------------------------------------
 module.exports = {
     resolve: {
         extensions: [".js", ".json", ".css"]
     },
-    entry: ['./dev/dist/es6/app.js'], //entrada del archivo a compilar
+    entry: ['./dev/src/app.js'], //entrada del archivo a compilar
     output: {
-        path: endPath, //salida del archivo a compilar
+        path: path.resolve(__dirname,'./dev/dist'), //salida del archivo a compilar
         filename: 'js/app.js', //nombre del archivo final compilado
-        publicPath: publicPath
+        publicPath: '/dist/' //siempre debe ir un slash al final
     },
     devtool: "source-map",
-    // devServer:{ //servidor para local para visualizar la programacion
-    //     contentBase: path.join(__dirname, "dist"),
-    //     compress: true,
-    //     port: 9000
-    // },
+    devServer:{ //servidor local para visualizar la programacion
+        contentBase: path.join(__dirname, "dev/dist/"),
+        compress: true,
+        port: 9000,
+        open: true
+    },
     module: {
         rules: [
             {
@@ -39,29 +50,16 @@ module.exports = {
                 exclude: /node_modules/,
                 use: "babel-loader"
             }, //procesa el tipo de archivo que compila
-            // {
-            //     test: /\.css$/,
-            //     use: [{
-            //         loader: 'style-loader'
-            //     },
-            //     {
-            //         loader: 'css-loader'
-            //     }
-            //     ]
-            // },
             {
                 test: /\.scss$/,
-                use: ExtractTextPlugin.extract({
+                use: ExtractTextPlugin.extract({ //para generar link de css en html se necesita el ExtractTextPlugin
                     fallback: "style-loader",
                     use: [
                         {
                             loader: 'css-loader'
                         },
                         {
-                            loader: 'sass-loader',
-                            options: {
-                                sourceMap: true
-                            }
+                            loader: 'sass-loader'
                         }
                     ],
                     publicPath: 'dev/dist/css' //aqui es donde se asegura que el archivo va compilar 
@@ -70,14 +68,24 @@ module.exports = {
         ]
     },
     plugins: [
-        new BrowserSyncPlugin({
-            host: 'localhost',
-            port: '3000',
-            server: { baseDir: ['dev/dist'] },
-            files: ['./dev/dist/index.html', './dev/dist/js/app.js']
-        }),
+        // new BrowserSyncPlugin({
+        //     host: 'localhost',
+        //     port: '3000',
+        //     server: { baseDir: ['dev/'] },
+        //     files: ['./dev/index.html', './dev/dist/js/app.js']
+        // }),
         new ExtractTextPlugin({
             filename: 'css/style.css'
+        }),
+        new HtmlWebpackPlugin({
+            title: 'Webpack',
+            template: './dev/src/index.html',
+            minify: {
+                caseSensitive: true
+            },
+            hash: true,
+            allChunks: true,
+            xhtml: true
         })
     ] //son complementos que pueden mejorar en la optimizacion de paquetes y minificar
 }
