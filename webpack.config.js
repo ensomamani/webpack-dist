@@ -3,29 +3,17 @@ const BrowserSyncPlugin = require('browser-sync-webpack-plugin'); //browser-sync
 const path = require('path');//Instanciar el inicio y final del camino
 /* html-webpack-plugin*/
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-//       webpackConfig = {
-//         entry: './dev/src/index.html',
-//         output: {
-//             path: path.resolve(__dirname,'./dev/dist'),
-//             filename: '/js/app.js'
-//         },
-//     plugins : [
-//         new HtmlWebpackPlugin({
-//             title: 'Webpack',
-//             template: './dev/src/index.html',
-//             minify: {
-//                 caseSensitive: true
-//             },
-//             hash: true,
-//             chunks: true,
-//             xhtml: true
-//         })
-//     ]
-// };
+
 /* MODULE PARA SASS */
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-//---------------------------------------
+/* PUG */
+// const template = require("./dev/src/index.pug");
+// => returns file.pug content as template function 
+ 
+// or, if you've bound .pug to pug-loader 
+       
+// //---------------------------------------
 module.exports = {
     resolve: {
         extensions: [".js", ".json", ".css"]
@@ -64,6 +52,10 @@ module.exports = {
                     ],
                     publicPath: 'dev/dist/css' //aqui es donde se asegura que el archivo va compilar 
                 })
+            },
+            {
+                test: /\.pug$/, //para que compile pug se debe instalar pug
+                use: "pug-loader" 
             }
         ]
     },
@@ -74,18 +66,21 @@ module.exports = {
         //     server: { baseDir: ['dev/'] },
         //     files: ['./dev/index.html', './dev/dist/js/app.js']
         // }),
-        new ExtractTextPlugin({
+        new ExtractTextPlugin({ //para generar el link de css y minificar
             filename: 'css/style.css'
+            // disable: false,
+            // allChunks: true
         }),
-        new HtmlWebpackPlugin({
-            title: 'Webpack',
-            template: './dev/src/index.html',
-            minify: {
-                caseSensitive: true
-            },
-            hash: true,
-            allChunks: true,
-            xhtml: true
+        new HtmlWebpackPlugin({ //para generar el html y minificar
+            filename: 'main.html',
+            title: 'Webpack is amazing',
+            template:"./dev/src/index.pug",
+            // minify: {
+            //     collapseWhitespace: true
+            // },
+            hash: true, //añade un hash de numeros despues del nombre del link ej: ?84563216
+            chunks: true,
+            xhtml: true //generara automaticamente las etiquetas que falten cerrar
         })
     ] //son complementos que pueden mejorar en la optimizacion de paquetes y minificar
 }
