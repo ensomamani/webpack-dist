@@ -1,4 +1,5 @@
 /*modules para browser-sync*/
+
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin'); //browser-sync + webpack
 const path = require('path');//Instanciar el inicio y final del camino
 /* html-webpack-plugin*/
@@ -10,26 +11,27 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 /* PUG */
 // const template = require("./dev/src/index.pug");
 // => returns file.pug content as template function 
- 
+
 // or, if you've bound .pug to pug-loader 
-       
+
 // //---------------------------------------
 module.exports = {
     resolve: {
         extensions: [".js", ".json", ".css"]
     },
-    entry: ['./dev/src/app.js'], //entrada del archivo a compilar
+    entry: ['./dev/src/js/app.js'], //entrada del archivo a compilar
     output: {
-        path: path.resolve(__dirname,'./dev/dist'), //salida del archivo a compilar
+        path: path.resolve(__dirname, './dev/dist'), //salida del archivo a compilar
         filename: 'js/app.js', //nombre del archivo final compilado
         publicPath: '/dist/' //siempre debe ir un slash al final
     },
     devtool: "source-map",
-    devServer:{ //servidor local para visualizar la programacion
+    devServer: { //servidor local para visualizar la programacion
         contentBase: path.join(__dirname, "dev/dist/"),
         compress: true,
         port: 9000,
-        open: true
+        open: true,
+        hot: true
     },
     module: {
         rules: [
@@ -55,7 +57,34 @@ module.exports = {
             },
             {
                 test: /\.pug$/, //para que compile pug se debe instalar pug
-                use: "pug-loader" 
+                use: "pug-loader"
+            },
+            // {
+            //     test: /\.(html)$/,
+            //     use: {
+            //         loader: 'html-loader'
+            //         // options: {
+            //         //     attrs: [':data-src']
+            //         //   }
+            //     }
+            // },
+            {
+                test: /\.(png|jpg|svg)$/, //este loader reconoce las imagenes en webpack
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[hash:12].[ext]',
+                            outputPath: 'img/'
+                        }
+                    },
+                    {
+                        loader: 'image-webpack-loader', //loader para minificar imagenes
+                        // options: {
+                        //     bypassOnDebug: true
+                        // }
+                    }
+                ]
             }
         ]
     },
@@ -72,12 +101,12 @@ module.exports = {
             // allChunks: true
         }),
         new HtmlWebpackPlugin({ //para generar el html y minificar
-            filename: 'main.html',
+            filename: 'html/main.html',
             title: 'Webpack is amazing',
-            template:"./dev/src/index.pug",
-            // minify: {
-            //     collapseWhitespace: true
-            // },
+            template: "./dev/src/templates/index.pug",
+            minify: {
+                collapseWhitespace: false
+            },
             hash: true, //añade un hash de numeros despues del nombre del link ej: ?84563216
             chunks: true,
             xhtml: true //generara automaticamente las etiquetas que falten cerrar
