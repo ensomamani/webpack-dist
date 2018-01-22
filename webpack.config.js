@@ -27,11 +27,10 @@ module.exports = {
     },
     devtool: "source-map",
     devServer: { //servidor local para visualizar la programacion
-        contentBase: path.join(__dirname, "dev/dist/"),
+        contentBase: path.join(__dirname, "./dev/dist/"),
         compress: true,
         port: 9000,
-        open: true,
-        hot: true
+        open: true
     },
     module: {
         rules: [
@@ -102,14 +101,14 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({ //para generar el html y minificar
             filename: 'html/main.html',
-            title: 'Webpack is amazing',
-            template: "./dev/src/templates/index.pug",
-            minify: {
-                collapseWhitespace: false
-            },
-            hash: true, //añade un hash de numeros despues del nombre del link ej: ?84563216
-            chunks: true,
-            xhtml: true //generara automaticamente las etiquetas que falten cerrar
+            title: 'amazing',
+            template: "./dev/src/templates/index.pug"
+            // minify: {
+            //     collapseWhitespace: false
+            // },
+            // hash: true, //añade un hash de numeros despues del nombre del link ej: ?84563216
+            // chunks: true,
+            // xhtml: true //generara automaticamente las etiquetas que falten cerrar
         })
     ] //son complementos que pueden mejorar en la optimizacion de paquetes y minificar
 }
