@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "prod": "webpack -p"
+    "prod": "webpack -p",
+    "dist": "webpack --env.prod --env.min='false'"
+    
   },
   "keywords": [],
   "author": "",

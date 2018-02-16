@@ -8,6 +8,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 /* MODULE PARA SASS */
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+const webpack = require('webpack')
 /* PUG */
 // const template = require("./dev/src/index.pug");
 // => returns file.pug content as template function 
@@ -37,7 +38,12 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: "babel-loader"
+                use: {
+                    loader: "babel-loader",
+                    options: {
+                        minified: false
+                    }
+                }
             }, //procesa el tipo de archivo que compila
             {
                 test: /\.scss$/,
@@ -58,15 +64,6 @@ module.exports = {
                 test: /\.pug$/, //para que compile pug se debe instalar pug
                 use: "pug-loader"
             },
-            // {
-            //     test: /\.(html)$/,
-            //     use: {
-            //         loader: 'html-loader'
-            //         // options: {
-            //         //     attrs: [':data-src']
-            //         //   }
-            //     }
-            // },
             {
                 test: /\.(png|jpg|svg)$/, //este loader reconoce las imagenes en webpack
                 use: [
@@ -109,6 +106,14 @@ module.exports = {
             // hash: true, //añade un hash de numeros despues del nombre del link ej: ?84563216
             // chunks: true,
             // xhtml: true //generara automaticamente las etiquetas que falten cerrar
+        }),
+        new webpack.DefinePlugin({
+            PRODUCTION: JSON.stringify(true),
+            NODE_ENV: JSON.stringify("production"),
+            VERSION: JSON.stringify("5fa3b9"),
+            BROWSER_SUPPORTS_HTML5: true,
+            TWO: "1+1",
+            "typeof window": JSON.stringify("object")
         })
     ] //son complementos que pueden mejorar en la optimizacion de paquetes y minificar
 }
