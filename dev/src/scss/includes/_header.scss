@@ -1,0 +1,58 @@
+.banner {
+    background-image: url('../img/banner.jpg');
+    background-size: 100% 100%;
+    width: 100%;
+    height: 38em;
+}
+.main-list{
+    text-align: center;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 2em;
+    &__link{
+        @include font(20px, 300);
+        padding: 0.5em 1em;
+        &:hover{
+            border: 1px solid $colorPrimary;
+            text-decoration: none;
+            color: $colorPrimary;
+            transition: all ease 0.1s;
+        }
+    }
+}
+
+
+   /* Estilos Logo*/
+.logo{
+    margin-top: 4em;
+}   
+.main-picture {
+    text-align: center;
+    margin-top: 4.5em;
+    position: relative;
+    margin: auto;
+    .main-logo__title{
+        position: absolute;
+        top: 25%;
+        left: 25%;
+    }
+    .main-logo__sub{
+        position: absolute;
+        top: 50%;
+        left: 45%;
+    }
+    .title{
+        @include font(6em, 600);
+    }
+    .sub-title{
+        @include font(2em, 100);
+    }
+    .slogan{
+        position: absolute;
+        top: 60.5%;
+        left: 29%;
+        @include font(1em, 100, italic);
+        
+    }
+}

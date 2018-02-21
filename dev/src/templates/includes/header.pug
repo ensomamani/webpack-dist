@@ -1,14 +1,20 @@
-
 .banner
-    header
+    header.header
         .container
-            nav.menu
-                ul.menu-main
-                    li
-                        a(href="#") Conócenos
-                    li
-                        a(href="#") Promoción
-                    li
-                        a(href="#") Encuéntranos
-                    li
-                        a(href="#") Pcs
+            nav.main-nav.column
+                ul.main-list.l-100
+                    each val in ['Conócenos', 'Promoción', 'Encuéntranos', 'Pcs']
+                        li.main-list__item.l-15
+                            a(href="#").main-list__link= val
+    .logo
+        .container.main-container
+            picture.main-picture.column.l-50
+                img(src=require("../../img/logo.png")).main-picture__logo
+                .main-logo__title
+                    h1.title Caza
+                .main-logo__sub
+                    h2.sub-title Lan gaming
+                .slogan
+                    p.slogan__message "Despierta el gamer que llevas dentro" 
+
+                             

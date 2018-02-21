@@ -1,10 +1,21 @@
-h2{
-    color: black   ;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-body{
- 
-}
-img {
-    width: 100%;
-    height: 20em;
-}
+/* Variables ed-grid */
+$cssCore: false;
+$cssHelpers: true;
+$devMode: false;
+
+/* Colores */
+//Titulos
+$colorPrimary: #EECF70;
+$colorSecondary: #0465B2;
+//Parrafos
+$primary: #272727;
+$secondary: #ffffff;
+
+@import 'mixins/font';
+@import 'edgrid/ed-grid';
+@import 'includes/header';

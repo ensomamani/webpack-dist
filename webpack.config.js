@@ -62,8 +62,9 @@ module.exports = {
             },
             {
                 test: /\.pug$/, //para que compile pug se debe instalar pug
-                use: "pug-loader"
+                use: ["pug-loader"]
             },
+
             {
                 test: /\.(png|jpg|svg)$/, //este loader reconoce las imagenes en webpack
                 use: [
@@ -71,7 +72,8 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             name: '[hash:12].[ext]',
-                            outputPath: 'img/'
+                             publicPath: '/dist/', //le decimos en que carpeta principal estara junto con el css y html
+                             outputPath: 'img/' // en la carpeta img se guardara las imagenes
                         }
                     },
                     {
@@ -97,23 +99,15 @@ module.exports = {
             // allChunks: true
         }),
         new HtmlWebpackPlugin({ //para generar el html y minificar
-            filename: 'html/main.html',
+            filename: 'html/index.html',
             title: 'amazing',
-            template: "./dev/src/templates/index.pug"
+            template: "./dev/src/templates/index.pug",
             // minify: {
-            //     collapseWhitespace: false
+            //      collapseWhitespace: false
             // },
             // hash: true, //añade un hash de numeros despues del nombre del link ej: ?84563216
             // chunks: true,
             // xhtml: true //generara automaticamente las etiquetas que falten cerrar
-        }),
-        new webpack.DefinePlugin({
-            PRODUCTION: JSON.stringify(true),
-            NODE_ENV: JSON.stringify("production"),
-            VERSION: JSON.stringify("5fa3b9"),
-            BROWSER_SUPPORTS_HTML5: true,
-            TWO: "1+1",
-            "typeof window": JSON.stringify("object")
         })
     ] //son complementos que pueden mejorar en la optimizacion de paquetes y minificar
 }
