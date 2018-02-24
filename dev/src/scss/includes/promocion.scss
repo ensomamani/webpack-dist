@@ -1,0 +1,25 @@
+.promotion {
+    background: url(../img/guy.jpg);
+    background-size: 100% 100%;
+    height: 45em;
+}
+.promo-title {
+    text-align: center;
+    margin: auto;
+        @include font(20px, 400, normal, $colorPrimary);
+    }
+    .promo-text {
+        margin-top: 8em;
+    }
+    .text-icon {
+        text-align: center;
+        .watch {
+            color: $colorPrimary;
+            font-size: 8em;
+        }
+    }
+.text-main {
+    text-align: center; 
+}
+
+

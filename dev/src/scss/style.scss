@@ -16,6 +16,9 @@ $colorSecondary: #0465B2;
 $primary: #272727;
 $secondary: #ffffff;
 
+
 @import 'mixins/font';
 @import 'edgrid/ed-grid';
 @import 'includes/header';
+@import 'includes/conocenos';
+@import 'includes/promocion';

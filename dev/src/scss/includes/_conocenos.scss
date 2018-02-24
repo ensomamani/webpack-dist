@@ -1,0 +1,23 @@
+/*Titulo*/
+.meet-us {
+    margin: 60px 0;
+}
+.title-meet {
+    text-align: center;
+    margin-bottom: 1em; 
+}
+.title-main {
+    @include font(40px, 600, normal, $colorSecondary);
+}
+/* parrafos */
+.paragraph{
+        margin: auto;
+        &-text {
+            line-height: 1.5em;
+            @include font(18px, 400, normal, #272727);
+            &:nth-child(2) {
+                margin-top: 2em;
+            }
+        }
+}
+
