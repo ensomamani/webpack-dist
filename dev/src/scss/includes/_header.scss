@@ -10,9 +10,15 @@
     display: flex;
     justify-content: center;
     margin-top: 2em;
+    &__item:nth-last-child(){
+        width: 0;
+    }
     &__link{
         @include font(20px, 300);
         padding: 0.5em 1em;
+        &:nth-last-child(){
+            padding: 0;
+        }
         &:hover{
             border: 1px solid $colorPrimary;
             text-decoration: none;

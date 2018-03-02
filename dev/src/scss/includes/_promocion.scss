@@ -8,8 +8,12 @@
     margin: auto;
         @include font(20px, 400, normal, $colorPrimary);
     }
+    .titulo-main {
+        margin-top: 2.5em;    
+    }
     .promo-text {
-        margin-top: 8em;
+        padding-top: 150px;
+        margin: 0 auto;
     }
     .text-icon {
         text-align: center;
@@ -20,6 +24,15 @@
     }
 .text-main {
     text-align: center; 
+    margin-top: 2em;
+    margin: 0 auto;
+}
+.desc-title {
+    @include font(40px, 600, normal);
+}
+.desc-paragraph {
+    margin-top: .5em;
+    @include font(30px, 600, normal);
 }
 
 

@@ -1,0 +1,31 @@
+.pcs {
+    margin: 70px 0em;
+}
+.main-title {
+    text-align: center;
+    h1 {
+        @include font(30px, 600, normal, $colorSecondary);
+    }
+}
+.main-box {
+    display: flex;
+    flex-wrap: wrap;    
+}
+.main-pc {
+    margin-top: 3em;
+    text-align: center;
+    .title {
+        @include font(25px, 600, normal , #272727);
+    }
+    &__paragraph {
+        margin: auto;
+        .text {
+            @include font(15px, 400, normal , #272727);
+            line-height: 1.8em;
+        }
+    }
+    .icon {
+        font-size: 130px;
+        color: $colorSecondary;
+    }
+}

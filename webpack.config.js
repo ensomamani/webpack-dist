@@ -7,7 +7,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 /* MODULE PARA SASS */
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-
+const ExtractTextPluginCss = require("extract-text-webpack-plugin");
 const webpack = require('webpack')
 /* PUG */
 // const template = require("./dev/src/index.pug");
@@ -30,11 +30,18 @@ module.exports = {
     devServer: { //servidor local para visualizar la programacion
         contentBase: path.join(__dirname, "./dev/dist/"),
         compress: true,
-        port: 9000,
+        port: 2070,
         open: true
     },
     module: {
         rules: [
+            {
+                test: /\.css$/,
+                use:ExtractTextPluginCss.extract({
+                    fallback: "style-loader",
+                    use: 'css-loader'
+                })
+            },
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
@@ -57,7 +64,7 @@ module.exports = {
                             loader: 'sass-loader'
                         }
                     ],
-                    publicPath: 'dev/dist/css' //aqui es donde se asegura que el archivo va compilar 
+                    publicPath: 'dev/dist/css/' //aqui es donde se asegura que el archivo va compilar 
                 })
             },
             {
@@ -66,7 +73,7 @@ module.exports = {
             },
 
             {
-                test: /\.(png|jpg|svg)$/, //este loader reconoce las imagenes en webpack
+                test: /\.(png|jpg|svg|woff|woff2|eot|ttf)$/, //este loader reconoce los siguientes formatos que se trabajaran en webpack
                 use: [
                     {
                         loader: 'file-loader',
@@ -97,6 +104,9 @@ module.exports = {
             filename: 'css/style.css'
             // disable: false,
             // allChunks: true
+        }),
+        new ExtractTextPluginCss({
+            filename: 'css/fonts.css'
         }),
         new HtmlWebpackPlugin({ //para generar el html y minificar
             filename: 'html/index.html',
