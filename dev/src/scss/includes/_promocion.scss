@@ -1,38 +1,40 @@
+.out-promotion {
+    height: 30em;
+    position: relative;
+}
+.promo-container {
+}
 .promotion {
-    background: url(../img/guy.jpg);
-    background-size: 100% 100%;
-    height: 45em;
+    width: 100%;
+    height: 80%;
+    background: #0465b2;
+    border-top: .5em solid $colorPrimary;
 }
 .promo-title {
-    text-align: center;
-    margin: auto;
-        @include font(20px, 400, normal, $colorPrimary);
-    }
-    .titulo-main {
-        margin-top: 2.5em;    
-    }
-    .promo-text {
-        padding-top: 150px;
-        margin: 0 auto;
-    }
-    .text-icon {
-        text-align: center;
-        .watch {
-            color: $colorPrimary;
-            font-size: 8em;
-        }
-    }
-.text-main {
-    text-align: center; 
-    margin-top: 2em;
-    margin: 0 auto;
+    margin: 6em 0;
 }
-.desc-title {
-    @include font(40px, 600, normal);
+.title {
+    @include font(60px, 600);
 }
-.desc-paragraph {
-    margin-top: .5em;
-    @include font(30px, 600, normal);
+.sub-title {
+    @include font(40px, 600);
+}
+.paragraph {
+    @include font(30px, 400, normal, #d8d6d6);   
 }
 
 
+/* Columna y reljo */
+.promo-column {
+    position: absolute;
+    right: 10%;
+    top: 0;
+}
+.watch-column {
+    background: $colorPrimary;
+    height: 30em;
+}
+.icon-clock {
+    font-size: 205.23px;
+    color: #fff;
+}
