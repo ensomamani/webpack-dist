@@ -1,22 +1,23 @@
 //- mixin
 mixin box(title, text)
-    .main-pc.l-50
-        .main-pc__icon
-             span(class!=attributes.class) 
-        .main-pc__text
-            h1.title=title
-            .main-pc__paragraph.l-50
+    .main-pc
+        .main-pc__icon.cross-center.l-20
+            .icon-box.cross-center.main-center
+                span(class!=attributes.class) 
+        .main-pc__text.cross-center
+            p.title-pc=title
+            .main-pc__paragraph
                 p.text=text
 
 .pcs
     .container
         .main-title.column.l-100 
-            h1 Nuestras Pcs
+            p Nuestras Pcs
         .main-box.column.l-100        
-            +box('Monitor', 'Monitores de 18 y 20 pulgadas comodas y legibles para jugar')(class='icon-desktop icon')
-            +box('Mouse', 'Mouse Logitech k120 sencillo y sensibilidad balanceada')(class='icon-mouse icon')
-            +box('Teclado', 'Teclado Logitech k120 fácil y cómodo para digitar y jugar')(class=' icon-keyboard icon')
-            +box('PC', 'Teclado Logitech k120 fácil y cómodo para digitar y jugar')(class='icon-pc icon')
+            +box('Monitor', 'Monitores de 18 y 20 pulgadas comodas y legibles para jugar.')(class='icon-desktop icon')
+            +box('Mouse', 'Mouse Logitech k120 sencillo y sensibilidad balanceada.')(class='icon-mouse icon')
+            +box('Teclado', 'Teclado Logitech k120 fácil y cómodo para digitar y jugar.')(class=' icon-keyboard icon')
+            +box('PC', 'Teclado Logitech k120 fácil y cómodo para digitar y jugar.')(class='icon-pc icon')
 
 
                     

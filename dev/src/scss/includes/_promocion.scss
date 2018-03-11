@@ -9,6 +9,7 @@
     height: 80%;
     background: #0465b2;
     border-top: .5em solid $colorPrimary;
+    border-bottom: .5em solid $colorPrimary;
 }
 .promo-title {
     margin: 6em 0;
@@ -24,7 +25,7 @@
 }
 
 
-/* Columna y reljo */
+/* Columna y reloj */
 .promo-column {
     position: absolute;
     right: 10%;
@@ -33,6 +34,28 @@
 .watch-column {
     background: $colorPrimary;
     height: 30em;
+    &::before {
+        content: "";
+        width: 40px;
+        height: 100px;
+        background: $colorPrimary;
+        position: absolute;
+        top: -3px;
+        left: -30px;
+        transform: rotate(50deg);
+        z-index: -1;
+    }
+    &::after {
+        content: "";
+        width: 40px;
+        height: 100px;
+        background: $colorPrimary;
+        position: absolute;
+        bottom: -2px;
+        left: -31px;
+        transform: rotate(130deg);
+        z-index: -1;
+    }
 }
 .icon-clock {
     font-size: 205.23px;

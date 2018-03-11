@@ -1,31 +1,58 @@
 .pcs {
-    margin: 70px 0em;
+    margin: 6em 0;
 }
 .main-title {
     text-align: center;
-    h1 {
-        @include font(30px, 600, normal, $colorSecondary);
+    p {
+        @include font(40px, 400, normal, $colorSecondary);
+        margin: .5em 0;  
     }
 }
 .main-box {
     display: flex;
-    flex-wrap: wrap;    
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .main-pc {
-    margin-top: 3em;
-    text-align: center;
-    .title {
-        @include font(25px, 600, normal , #272727);
+    display: flex;
+    margin: 1em 0;
+    width: 49%;
+    height: 150px;
+    box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.57);
+    
+    &:hover .main-pc__icon {
+        background: $colorSecondary;
+        transition: all ease .3s;
     }
-    &__paragraph {
-        margin: auto;
-        .text {
-            @include font(15px, 400, normal , #272727);
-            line-height: 1.8em;
+    &:hover .main-pc__icon span {
+        color: #fff;
+    }
+    &:hover .icon-box {
+        border-right: $colorSecondary;
+    }
+    &__icon {
+        text-align: center;
+        width: 150px;
+        height: 100%;
+        .icon-box {
+            width: 9em; 
+            height: 80%;
+            border-right: 1px solid #c6c5c5;
+        }
+        span {
+            font-size: 70px;
+            color: $colorSecondary;
         }
     }
-    .icon {
-        font-size: 130px;
-        color: $colorSecondary;
-    }
+}
+
+.main-pc__text {
+    margin: 0 2em;
+}
+.title-pc {
+    @include font(25px, 600, normal, #272727);
+}
+.main-pc__paragraph {
+    @include font(15px, 400, normal, #272727);
+    line-height: 25px;
 }
