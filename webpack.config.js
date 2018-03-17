@@ -30,7 +30,7 @@ module.exports = {
     devServer: { //servidor local para visualizar la programacion
         contentBase: path.join(__dirname, "./dev/dist/"),
         compress: true,
-        port: 2070,
+        port: 7070,
         open: true
     },
     module: {

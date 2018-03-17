@@ -1,0 +1,27 @@
+/* TITULO Y SUBTITULO*/
+.title-games {
+    .title {
+        @include font(40px, 400, normal, $colorSecondary);
+        text-shadow: none;
+        text-align: center;
+    }
+}
+.subtitle-games {
+    .subtitle {
+        text-align: center;
+        @include font(30px, 100, normal, #004e8c);
+    }
+}
+
+/* IMAGENES */
+.slide-games {
+    overflow: hidden;
+    margin-top: 2.5em;
+}
+.main-slide {
+    width: 200%;
+    display: flex;
+    .box-image {
+        width: 15em; 
+    }
+}

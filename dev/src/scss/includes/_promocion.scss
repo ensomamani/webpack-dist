@@ -16,13 +16,16 @@
 }
 .title {
     @include font(60px, 600);
+    text-shadow: 2px 2px #272727;
 }
 .sub-title {
     @include font(40px, 600);
+    text-shadow: 2px 2px #272727;
 }
-.paragraph {
+.paragraph-promo {
     @include font(30px, 400, normal, #d8d6d6);   
-}
+    text-shadow: 2px 2px #272727;
+}   
 
 
 /* Columna y reloj */
@@ -58,6 +61,16 @@
     }
 }
 .icon-clock {
-    font-size: 205.23px;
+    font-size: 205px;
     color: #fff;
+    animation: rotate 5s alternate;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }

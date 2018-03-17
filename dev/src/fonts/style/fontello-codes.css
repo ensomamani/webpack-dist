@@ -2,5 +2,8 @@
 .icon-pc:before { content: '\e800'; } /* '' */
 .icon-mouse:before { content: '\e801'; } /* '' */
 .icon-clock:before { content: '\e802'; } /* '' */
+.icon-location:before { content: '\e803'; } /* '' */
+.icon-calendar:before { content: '\e804'; } /* '' */
+.icon-phone:before { content: '\e805'; } /* '' */
 .icon-desktop:before { content: '\f108'; } /* '' */
 .icon-keyboard:before { content: '\f11c'; } /* '' */

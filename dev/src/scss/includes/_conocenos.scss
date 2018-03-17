@@ -7,14 +7,14 @@
     margin-bottom: 1em; 
 }
 .title-main {
-    @include font(40px, 600, normal, $colorSecondary);
+    @include font(40px, 400, normal, $colorSecondary);
 }
 /* parrafos */
 .paragraph{
         margin: auto;
         &-text {
             line-height: 1.5em;
-            @include font(18px, 400, normal, #272727);
+            @include font(15px, 400, normal, #272727);
             &:nth-child(2) {
                 margin-top: 2em;
             }

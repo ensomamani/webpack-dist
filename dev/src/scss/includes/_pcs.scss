@@ -18,17 +18,25 @@
     margin: 1em 0;
     width: 49%;
     height: 150px;
-    box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.57);
-    
+  //box-shadow: 0px 0px 17px -1px rgba(0,0,0,0.57);
+    border-radius: 4px;
+    border: 1px solid $colorSecondary;
+     &:hover {
+        border: 1px solid #004e8b;
+     }
     &:hover .main-pc__icon {
         background: $colorSecondary;
         transition: all ease .3s;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
     }
     &:hover .main-pc__icon span {
         color: #fff;
+        font-size: 90px;
     }
     &:hover .icon-box {
         border-right: $colorSecondary;
+        
     }
     &__icon {
         text-align: center;
@@ -42,6 +50,7 @@
         span {
             font-size: 70px;
             color: $colorSecondary;
+            transition: all ease .3s;
         }
     }
 }
