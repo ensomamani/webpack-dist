@@ -13,8 +13,9 @@
 .paragraph{
         margin: auto;
         &-text {
+            text-align: center;
             line-height: 1.5em;
-            @include font(15px, 400, normal, #272727);
+            @include font(14px, 100, normal, #272727);
             &:nth-child(2) {
                 margin-top: 2em;
             }

@@ -1,4 +1,4 @@
-mixin locate(title, text)
+mixin locate(title, ...text)
     .info__locate.l-100
         div.info__first.l-100
             span(class!=attributes.class)
@@ -13,6 +13,6 @@ mixin locate(title, text)
             <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m11!1m3!1d126.8637920945285!2d-76.98108589757398!3d-12.190629644747776!2m2!1f12.573248082364396!2f45!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x9105b9beaec970d3%3A0x1227cd4bdcdcf443!2sMateo+Pumacahua%2C+Distrito+de+Chorrillos+15058!5e1!3m2!1ses!2spe!4v1521082114888" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
         .info.column.l-50
             +locate('Ubícanos', 'Mz "R” Lt 20 Cmt 35 AAHH Mateo Pumacahua - Chorrillos')(class='icon icon-location')    
-            +locate('Horario de Atención', 'LUNES A DOMINGO')(class='icon icon-calendar')            
+            +locate('Horario de Atención', 'LUNES A DOMINGO',' 9am - 10pm')(class='icon icon-calendar')            
             +locate('Llámanos', '01-258-0471')(class='icon icon-phone')            
 

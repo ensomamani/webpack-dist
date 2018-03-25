@@ -8,8 +8,8 @@
     width: 100%;
     height: 80%;
     background: #0465b2;
-    border-top: .5em solid $colorPrimary;
-    border-bottom: .5em solid $colorPrimary;
+    border-top: .3em solid $colorPrimary;
+    border-bottom: .3em solid $colorPrimary;
 }
 .promo-title {
     margin: 6em 0;
@@ -63,7 +63,7 @@
 .icon-clock {
     font-size: 205px;
     color: #fff;
-    animation: rotate 5s alternate;
+    animation: rotate ease-in-out 6s infinite;
 }
 
 @keyframes rotate {

@@ -15,13 +15,48 @@
 
 /* IMAGENES */
 .slide-games {
+    position: relative;
     overflow: hidden;
     margin-top: 2.5em;
+    height: 220px;
+    &:hover .prev {
+        background: rgba($colorSecondary, .9);
+        color: #fff;
+    }
+    &:hover .next {
+        background: rgba($colorSecondary, .9);
+        color: #fff;
+    }
 }
 .main-slide {
     width: 200%;
     display: flex;
+    position: absolute;
+    left: 0;
+    transition: all ease .3s;
     .box-image {
         width: 15em; 
     }
+}
+
+
+/*slider style*/
+.prev, .next {
+    color: #000;
+    position: absolute;
+    top: 25%;
+    font-size: 25px;
+    width: 40px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    background: rgba($primary, .5);
+    line-height: 50px;
+    
+    &:hover {
+        font-size: 30px;
+     }
+}
+.next {
+    right: 0;
 }
