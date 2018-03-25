@@ -63,7 +63,7 @@
 .icon-clock {
     font-size: 205px;
     color: #fff;
-    animation: rotate ease-in-out 6s infinite;
+    animation: rotate 3s ease-in-out 3s alternate;
 }
 
 @keyframes rotate {
