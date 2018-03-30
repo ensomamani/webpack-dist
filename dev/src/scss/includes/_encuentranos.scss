@@ -1,5 +1,8 @@
 
 /* GOOGLE MAPS */
+.find-us {
+    margin-top: 60px;
+}
 iframe {
     width: 100%;
 }
@@ -14,9 +17,6 @@ iframe {
     }   
 }
 
-.find-us {
-    margin: 6em 0;
-}
 .info__locate {
     margin-bottom: 1.5em;
     border-radius: 4px;
@@ -36,13 +36,13 @@ iframe {
     }
 }
 .info__second {
-    @include font(16px, 400, normal, #272727);    
+    @include font(14px, 400, normal, #272727);    
     border: 1px solid #dcdbdb;
-    height: 94px;
+    height: 50px;
     box-shadow: 0px 3px 11px -2px rgba(0,0,0, .3);
     .info__text {
         margin: auto;
-        line-height: 94px;
+        line-height: 50px;
         text-align: center;
     }
 }

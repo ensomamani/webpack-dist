@@ -1,5 +1,5 @@
 .pcs {
-    margin: 6em 0;
+    margin-top:60px; 
 }
 .main-title {
     text-align: center;
@@ -25,17 +25,18 @@
         border: 1px solid #004e8b;
      }
     &:hover .main-pc__icon {
-        background: $colorSecondary;
+        // background: $colorSecondary;
+        
         transition: all ease .3s;
         border-top-left-radius: 4px;
         border-bottom-left-radius: 4px;
     }
     &:hover .main-pc__icon span {
-        color: #fff;
+        color: $colorSecondary;
         font-size: 90px;
     }
     &:hover .icon-box {
-        border-right: $colorSecondary;
+        // border-right: $colorSecondary;
         
     }
     &__icon {
@@ -59,9 +60,9 @@
     margin: 0 2em;
 }
 .title-pc {
-    @include font(25px, 600, normal, #272727);
+    @include font(20px, 600, normal, #272727);
 }
 .main-pc__paragraph {
-    @include font(15px, 400, normal, #272727);
+    @include font(14px, 400, normal, #272727);
     line-height: 25px;
 }

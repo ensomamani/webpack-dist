@@ -1,4 +1,7 @@
 /* TITULO Y SUBTITULO*/
+.games {
+    margin-top: 60px;
+}
 .title-games {
     .title {
         @include font(40px, 400, normal, $colorSecondary);
@@ -9,7 +12,7 @@
 .subtitle-games {
     .subtitle {
         text-align: center;
-        @include font(30px, 100, normal, #004e8c);
+        @include font(25px, 400, normal, #333333);
     }
 }
 
