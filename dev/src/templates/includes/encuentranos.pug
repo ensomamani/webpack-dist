@@ -1,18 +1,24 @@
-mixin locate(title, ...text)
-    .info__locate.l-100
-        div.info__first.l-100
-            span(class!=attributes.class)
-            p.info__title=title
-        div.info__second.l-100
-            p.info__text=text    
 .find-us
     .container
-        .main-find.column.l-100
-            h1.title-info Encuétranos
-        .maps.column.l-50
-            <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m11!1m3!1d126.8637920945285!2d-76.98108589757398!3d-12.190629644747776!2m2!1f12.573248082364396!2f45!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x9105b9beaec970d3%3A0x1227cd4bdcdcf443!2sMateo+Pumacahua%2C+Distrito+de+Chorrillos+15058!5e1!3m2!1ses!2spe!4v1521082114888" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-        .info.column.l-50
-            +locate('Ubícanos', 'Mz "R” Lt 20 Cmt 35 AAHH Mateo Pumacahua - Chorrillos')(class='icon icon-location')    
-            +locate('Horario de Atención', 'LUNES A DOMINGO',' 9am - 10pm')(class='icon icon-calendar')            
-            +locate('Llámanos', '01-258-0471')(class='icon icon-phone')            
-
+        .content-find.column.l-100
+            .content-title.l-100
+                h1.find-title Encuentranos
+            .box-content.l-100
+                .box-description.l-40
+                    span.icon-location.icon-description
+                    h2.description-title.first-title Direccion
+                    p.address Mz R Lt 20 Cmt 35 Mateo Pumacahua - Chorrillos
+                    p.text-call LLamanos para mas información
+                    p.call 01258-0471
+                .box-description.l-40
+                    span.icon-clock.icon-description
+                    h2.description-title Horario
+                    .days-time
+                        .five-days
+                            p Lunes a Viernes
+                            p 9:00am - 10:00pm
+                        .five-days
+                            p Sabados y Domingos
+                            p 9:00am - 9:00pm
+.map
+    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m11!1m3!1d172.279913397225!2d-76.97980277868375!3d-12.190722629813646!2m2!1f322.6379050007815!2f45!3m2!1i1024!2i768!4f35!3m3!1m2!1s0x9105b9beaec970d3%3A0x1227cd4bdcdcf443!2sMateo+Pumacahua%2C+Distrito+de+Chorrillos+15058!5e1!3m2!1ses!2spe!4v1534108314161" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>                    

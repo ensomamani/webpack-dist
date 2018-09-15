@@ -1,6 +1,6 @@
-@mixin font ($font-size: 15px, $font-weight: 400,$font-style: normal, $color: #ffffff) {
+@mixin font ($font-size: 16px, $font-weight: 400,$font-style: normal, $color: #ffffff) {
     font-size: $font-size;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Muli', sans-serif;
     font-weight: $font-weight;
     color: $color;
     font-style: $font-style;

@@ -79,8 +79,8 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             name: '[hash:12].[ext]',
-                             publicPath: '/dist/', //le decimos en que carpeta principal estara junto con el css y html
-                             outputPath: 'img/' // en la carpeta img se guardara las imagenes
+                            publicPath: '/dist/', //le decimos en que carpeta principal estara junto con el css y html
+                            outputPath: 'img/' // en la carpeta img se guardara las imagenes
                         }
                     },
                     {
@@ -105,9 +105,9 @@ module.exports = {
             // disable: false,
             // allChunks: true
         }),
-        new ExtractTextPluginCss({
-            filename: 'css/fonts.css'
-        }),
+        // new ExtractTextPluginCss({
+        //     filename: 'css/fonts.css'
+        // }),
         new HtmlWebpackPlugin({ //para generar el html y minificar
             filename: 'html/index.html',
             title: 'amazing',

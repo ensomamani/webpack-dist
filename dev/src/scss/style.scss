@@ -9,14 +9,21 @@ $cssHelpers: true;
 $devMode: false;
 
 /* Colores */
-//Titulos
-$colorPrimary: #EECF70;
-$colorSecondary: #0465B2;
-//Parrafos
-$primary: #272727;
-$secondary: #ffffff;
+$colorPrimary: #ffffff;
+$colorSecondary: #B67D00;
+$colorAlternative-text: #636363;
 
+//Quitar padding y margin a todo
+*{
+    padding: 0;
+    margin: 0;
+}
 
+//asignando estilo de fuente y color en body
+body {
+    font-family: 'Muli', sans-serif;
+    background: #060606;
+}
 @import 'mixins/font';
 @import 'edgrid/ed-grid';
 @import 'includes/header';
@@ -26,3 +33,7 @@ $secondary: #ffffff;
 @import 'includes/encuentranos';
 @import 'includes/games';
 @import 'includes/footer';
+@import 'includes/banner-disfruta';
+@import 'includes/galeria';
+@import 'includes/modal';
+

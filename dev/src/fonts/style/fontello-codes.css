@@ -1,12 +1,16 @@
 
-.icon-pc:before { content: '\e800'; } /* '' */
-.icon-mouse:before { content: '\e801'; } /* '' */
-.icon-clock:before { content: '\e802'; } /* '' */
-.icon-location:before { content: '\e803'; } /* '' */
-.icon-calendar:before { content: '\e804'; } /* '' */
-.icon-phone:before { content: '\e805'; } /* '' */
-.icon-left-open:before { content: '\e806'; } /* '' */
-.icon-right-open:before { content: '\e807'; } /* '' */
-.icon-up:before { content: '\e808'; } /* '' */
+.icon-headphones:before { content: '\e800'; } /* '' */
+.icon-location:before { content: '\e801'; } /* '' */
+.icon-mouse:before { content: '\e802'; } /* '' */
+.icon-resize-full:before { content: '\e803'; } /* '' */
+.icon-clock:before { content: '\e804'; } /* '' */
+.icon-right-dir:before { content: '\e805'; } /* '' */
+.icon-tienda--b:before { content: '\e806'; } /* '' */
+.icon-pc:before { content: '\e807'; } /* '' */
+.icon-up-open:before { content: '\e808'; } /* '' */
+.icon-cancel:before { content: '\e809'; } /* '' */
+.icon-phone-squared:before { content: '\f098'; } /* '' */
+.icon-rss:before { content: '\f09e'; } /* '' */
+.icon-menu:before { content: '\f0c9'; } /* '' */
 .icon-desktop:before { content: '\f108'; } /* '' */
 .icon-keyboard:before { content: '\f11c'; } /* '' */

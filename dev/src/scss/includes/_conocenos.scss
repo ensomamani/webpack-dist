@@ -1,24 +1,26 @@
-/*Titulo*/
-.meet-us {
-    margin: 60px 0;
+                    /* Nuestra historia */
+.meet-us__container {
+    padding: 40px 0;
+    align-items: center;
 }
-.title-meet {
-    text-align: center;
-    margin-bottom: 1em; 
+.title-history {
+   
+    @include font(25px, 400, normal, $colorPrimary);
+    span {
+        border-top: 4px solid $colorSecondary;
+        padding-top: 0.4em;
+    }
 }
-.title-main {
-    @include font(40px, 400, normal, $colorSecondary);
+.paragraph-text {
+    @include font(14px, 400, normal, $colorAlternative-text);
+    span {
+        @include font(14px, 600, normal, $colorAlternative-text);
+    }
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    letter-spacing: 0px;
+    line-height: 22px;
 }
-/* parrafos */
-.paragraph{
-        margin: auto;
-        &-text {
-            text-align: center;
-            line-height: 1.5em;
-            @include font(14px, 400, normal, #272727);
-            &:nth-child(2) {
-                margin-top: 2em;
-            }
-        }
+.img-boy {
+    display: block;
 }
-
