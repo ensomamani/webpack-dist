@@ -1,0 +1,42 @@
+.banner-enjoy {
+    width: 100%;
+    background: url("../img/galery-1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: 40px;
+}
+
+.content-child {
+    border: 5px solid $colorSecondary;
+    margin: 3em 0;
+    padding: 15px;
+}
+.banner-enjoy-title {
+    @include font(38px, 400, italic, $colorPrimary);
+    text-align: center;
+    margin-top: 2em;
+    text-shadow: 4px 2px 4px #000;
+    position: relative;
+    &:before {
+        content: "";
+        width: 200px;
+        height: 5px;
+        background: $colorSecondary;
+        position: absolute;
+        top: 110%;
+        right: 40%;
+    }
+}
+.enjoy-box-games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 3em 0;
+}
+.img-enjoy {
+    margin: auto;
+    display: block;
+    width: 150px;
+}

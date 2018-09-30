@@ -1,0 +1,36 @@
+.galery {
+    margin-bottom: 40px;
+}
+.content-galery-title {
+    .galery-title {
+        @include font(30px, 600, normal, $colorPrimary);
+        text-align: center;
+    }
+}
+.content-img {
+    display: flex;
+    flex-wrap: wrap;
+}
+.figure-content {
+   position: relative;
+}
+.opacity-style {
+    background: #000;
+    &:hover {
+        border: 2px solid #fff;
+    }
+}
+.img-galery {
+    display: block;
+}
+.icon-resize {
+    position: absolute;
+    bottom: 0;
+    color: white;
+    font-size: 30px;
+    right: 0;
+    padding: 5px;
+    &:hover {
+        cursor: pointer;   
+    }
+}
