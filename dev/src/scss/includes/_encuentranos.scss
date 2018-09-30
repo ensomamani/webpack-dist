@@ -9,13 +9,13 @@
 }
 .box-content {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
 }
 .box-description {
     background: #111111;
     text-align: center;
     padding: 4em 0;
-    
+    margin-top: 5px;
 }
 .icon-description {
     padding: 15px;
@@ -47,6 +47,12 @@
 .five-days {
     color: #fff;
     text-align: center;
+}
+.reference{
+    padding: 0 1em;
+    color: #fff;
+    font-weight: 600;
+    margin: 15px 0;
 }
 //mapa
 .map {

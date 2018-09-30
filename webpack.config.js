@@ -22,13 +22,13 @@ module.exports = {
     },
     entry: ['./dev/src/js/app.js'], //entrada del archivo a compilar
     output: {
-        path: path.resolve(__dirname, './dev/dist'), //salida del archivo a compilar
+        path: path.resolve(__dirname, './dist'), //salida de todos los archivo a compilar
         filename: 'js/app.js', //nombre del archivo final compilado
         publicPath: '/dist/' //siempre debe ir un slash al final
     },
     devtool: "source-map",
     devServer: { //servidor local para visualizar la programacion
-        contentBase: path.join(__dirname, "./dev/dist/"),
+        contentBase: path.join(__dirname, "./dist/"),
         compress: true,
         port: 7070,
         open: true
@@ -96,9 +96,9 @@ module.exports = {
     plugins: [
         // new BrowserSyncPlugin({
         //     host: 'localhost',
-        //     port: '3000',
+        //     port: '7001',
         //     server: { baseDir: ['dev/'] },
-        //     files: ['./dev/index.html', './dev/dist/js/app.js']
+        //     files: ['dev/dist/html/index.html']
         // }),
         new ExtractTextPlugin({ //para generar el link de css y minificar
             filename: 'css/style.css'

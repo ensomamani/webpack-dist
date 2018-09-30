@@ -1,15 +1,15 @@
 //- mixin
 mixin box(title, text)
-    .our-pcs-box.l-45
+    .our-pcs-box.l-45.m-100.s-100
         .our-pc-icon
             span(class!=attributes.class)
         .our-pc-content
             h2.pc-title= title
             p.pc-text= text  
-            a(href="#").pc-link__watch ver  
-.our-pcs
+            span.pc-link__watch ver  
+.our-pcs#our-pcs
     .container
-        .our-pcs-title.column.l-100
+        .our-pcs-title.column#our-pcs-title.l-100
             .our-pcs-title__first
                 h1 ¿Qué tenemos para ti?
             .our-pcs-title__second

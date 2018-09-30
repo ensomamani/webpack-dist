@@ -3,10 +3,13 @@
 }
 .subfooter-content {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .footer-box-title {
     @include font(16px, 600, normal, #7f7a70);   
+}
+.content-box {
+    margin: 15px 0;
 }
 .list-footer {
     margin-top: 10px;

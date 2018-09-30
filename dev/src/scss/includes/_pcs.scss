@@ -17,8 +17,11 @@
     }
 }
 .our-pc-icon {
-    padding-right: 30px;
+    padding: 0 15px;
     border-right: 1px solid #333333; 
+    @include to(s) {
+        padding:0 10px;
+    }
 }
 .pc-title {
     @include font(23px, 500, normal, $colorPrimary); 
@@ -34,6 +37,10 @@
     margin-top: 10px;
     display: block;
     font-size: 14px;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 .our-pcs-box {
@@ -52,6 +59,9 @@
     color: $colorSecondary;
     font-size: 60px;
     line-height: 120px;
+    @include to(s) {
+        font-size: 40px;
+    }
 }
 .our-pcs-main{
    display: flex;

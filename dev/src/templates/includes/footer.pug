@@ -1,5 +1,5 @@
 mixin listadoFooter(title, ...lists)
-    .content-box.l-25
+    .content-box.l-25.m-50.s-100
         h2.footer-box-title= title
         ul.list-footer
          each list in lists
@@ -11,7 +11,7 @@ mixin listadoFooter(title, ...lists)
             +listadoFooter('JUEGOS', 'Dota2', 'League of Legends', 'Rakion', 'Wolfteam', 'Counter Strike GO')     
             +listadoFooter('PCS', 'Mouse', 'Teclado gamer', 'Auricular Gamer', 'Pc de gama media')     
             +listadoFooter('MINITIENDA', 'Contamos con una tienda exclusivamente para ustedes')
-            .content-box.l-25
+            .content-box.l-25.m-50.s-100
                 h2.footer-box-title CONTÁCTANOS
                     ul.list-footer
                         li.list-footer-child.icon-location

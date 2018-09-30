@@ -1,18 +1,24 @@
 .banner
-    header.header
-        nav.nav-menu.container
-            .imago-tipo.l-30.column
-                img(src=require("../../img/logo-ms150.png"), alt="Inicio").imagotipo
-            ul.main-list.l-70.column
-                li.list-menu
-                    a(href="#").link-menu Conócenos
-                li.list-menu
-                    a(href="#").link-menu Servicios
-                li.list-menu
-                    a(href="#").link-menu Fotos
-                li.list-menu
-                    a(href="#").link-menu Encuéntranos
-    .banner-text.container
+    header#header.header
+        .container
+            .imago-tipo.s-70.l-50.column
+                    a(href="#")
+                        img(src=require("../../img/logo-ms150.png"), alt="Inicio").imagotipo
+                           
+            .toggle-main.s-30.column.cross-center.main-end
+                .nav-toggle#main-nav-toggle
+            .l-50.column.main-end
+                nav.swim-menu.main-nav#main-nav
+                    ul.main-menu.main-list#main-menu
+                        li.list-menu
+                            p.link-menu#conocenos Conócenos
+                        li.list-menu
+                            p.link-menu#servicios Servicios
+                        li.list-menu
+                            p.link-menu#fotos Fotos
+                        li.list-menu
+                            p.link-menu#encuentranos Encuéntranos
+    .banner-text.container#banner-text
         .banner-message.l-100.column
             .banner-box-title.l-100
                 h1.banner-title.l-65 Disfruta los mejores juegos online 
@@ -20,6 +26,6 @@
             .banner-box-title.l-100
                 p.short-text y despierta el gamer que llevas dentro.
         .banner-button.l-100.column
-            button(type='button').button-game Ver juegos
+            button(type='button').button-game#button-game Ver juegos
 
 
