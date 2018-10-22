@@ -1,0 +1,95 @@
+                /*Estilos pc*/
+
+.our-pcs {
+    padding-bottom: 40px;
+}
+.our-pcs-title__first {
+    h1 {
+        @include font(30px, 600, normal, $colorPrimary);
+        text-align: center;
+    }
+}
+.our-pcs-title__second {
+    p {
+        @include font(16px, 400, normal, $colorAlternative-text);
+        text-align: center;
+        margin: 1em 0;
+    }
+}
+.our-pc-icon {
+    padding: 0 15px;
+    border-right: 1px solid #333333; 
+    @include to(s) {
+        padding:0 10px;
+    }
+}
+.pc-title {
+    @include font(23px, 500, normal, $colorPrimary); 
+    margin-bottom: 10px;
+}
+.pc-text {
+    @include font(14px, 400, normal, $colorAlternative-text);
+    line-height: 22px;
+}
+
+.pc-link__watch {
+    color: $colorSecondary;
+    margin-top: 10px;
+    display: block;
+    font-size: 14px;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.our-pcs-box {
+    display: flex;
+    margin-bottom: 30px;
+    border-bottom: 5px solid #1F1F1F;
+} 
+
+
+.our-pc-content {
+    margin-left: 30px;
+    padding: 1em 0;
+   // border-bottom: 2px solid #333333;
+}
+.icon {
+    color: $colorSecondary;
+    font-size: 60px;
+    line-height: 120px;
+    @include to(s) {
+        font-size: 40px;
+    }
+}
+.our-pcs-main{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+.our-pcs-box {
+    &:nth-child(7) {
+        display: block;
+        margin: 0 auto;
+        .our-pc-icon {
+            border-right: none;
+            text-align: center;
+            padding: 0;
+        }
+        .our-pc-content {
+            padding: 0 0;
+            margin-left: 0;
+        }
+        .pc-title,.pc-text{
+            text-align: center;
+        }
+        .pc-text{
+            padding-bottom: 20px;
+        }
+        .pc-link__watch{
+            display: none;
+        }
+    }
+} 

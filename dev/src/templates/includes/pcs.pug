@@ -1,0 +1,41 @@
+//- mixin
+mixin box(title, text)
+    .our-pcs-box.l-45.m-100.s-100
+        .our-pc-icon
+            span(class!=attributes.class)
+        .our-pc-content
+            h2.pc-title= title
+            p.pc-text= text  
+            span.pc-link__watch ver  
+.our-pcs#our-pcs
+    .container
+        .our-pcs-title.column#our-pcs-title.l-100
+            .our-pcs-title__first
+                h1 ¿Qué tenemos para ti?
+            .our-pcs-title__second
+                p Contamos con pcs de gama media especialmente para juegos, ¡Que esperas echale un vistazo!.
+        .our-pcs-main.l-100        
+            - var infoPc = { 
+            -   title : ['Monitor', 'Teclado', 'Mouse', 'Auricular','PC', 'Minitienda', 'Fibra Optica'],
+            -   content : [
+            -       'Monitores led y lcd de 18 y 20 pulgadas.', 
+            -       'Teclado gamer semimecánico, rápido y sensible para digitar y jugar.',
+            -       'Mouse Logitech k120 sencillo y rapido para tus jugadas pro.',
+            -       '100% gamer con sonido en alta calidad.',
+            -       'Pc de gama media con gráficos en nivel medio en juegos como dotas 2 y league of legends.',
+            -       'Contamos con una mini tienda para que disfrutes de la vida y sus manajares.',
+            -       'Trabajamos con fibra optica 100% dedicada y administrada para juegues como los pros'
+            -    ],
+            -   clases : [
+            -       'icon-desktop icon',
+            -       'icon-keyboard icon',
+            -       'icon-mouse icon',
+            -       'icon-headphones icon',
+            -       'icon-pc icon',
+            -       'icon-tienda--b icon mini-store',
+            -       'icon-rss icon'
+            -   ]
+            - }
+                each pc, p in infoPc.title
+                    if p == infoPc.content[p] && p== infoPc.clases[p]
+                    +box(pc, infoPc.content[p])(class=infoPc.clases[p])

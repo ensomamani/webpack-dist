@@ -1,0 +1,64 @@
+.find-us {
+    width: 100%;
+    margin-bottom: 40px;
+}
+.find-title {
+    @include font(30px, 600, normal, $colorPrimary);
+    text-align: center;
+    margin-bottom: 16px;
+}
+.box-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+.box-description {
+    background: #111111;
+    text-align: center;
+    padding: 4em 0;
+    margin-top: 5px;
+}
+.icon-description {
+    padding: 15px;
+    font-size: 30px;
+    color: #FFF;
+    border-radius: 50%;
+    background: $colorSecondary;
+    text-align: center;
+    line-height: 15px;
+}
+.description-title {
+    color: #fff;
+    margin: 1em 0;
+}
+.address {
+    color: #fff;
+}
+.text-call {
+    color: #fff;
+}
+.call {
+    color: #fff;
+}
+.days-time {
+    padding: 0 2em;
+    display: flex;
+    justify-content: space-between;
+}
+.five-days {
+    color: #fff;
+    text-align: center;
+}
+.reference{
+    padding: 0 1em;
+    color: #fff;
+    font-weight: 600;
+    margin: 15px 0;
+}
+//mapa
+.map {
+    width: 100%;
+    margin-bottom: 40px;
+    iframe {
+        width: 100%;
+    }
+}

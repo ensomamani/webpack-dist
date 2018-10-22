@@ -1,0 +1,27 @@
+                    /* Nuestra historia */
+.meet-us__container {
+    padding: 40px 0;
+    align-items: center;
+}
+.title-history {
+   
+    @include font(25px, 400, normal, $colorPrimary);
+    span {
+        border-top: 4px solid $colorSecondary;
+        padding-top: 0.4em;
+    }
+}
+.paragraph-text {
+    @include font(14px, 400, normal, $colorAlternative-text);
+    span {
+        @include font(14px, 600, normal, $colorAlternative-text);
+    }
+    margin-top: 1.5em;
+    margin-bottom: 1.5em;
+    letter-spacing: 0px;
+    line-height: 22px;
+}
+.img-boy {
+    display: block;
+    width: 100%;
+}

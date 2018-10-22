@@ -1,14 +1,31 @@
-
 .banner
-    header
+    header#header.header
         .container
-            nav.menu
-                ul.menu-main
-                    li
-                        a(href="#") Conócenos
-                    li
-                        a(href="#") Promoción
-                    li
-                        a(href="#") Encuéntranos
-                    li
-                        a(href="#") Pcs
+            .imago-tipo.s-70.l-50.column
+                    a(href="#")
+                        img(src=require("../../img/logo-ms150.png"), alt="Inicio").imagotipo
+                           
+            .toggle-main.s-30.column.cross-center.main-end
+                .nav-toggle#main-nav-toggle
+            .l-50.column.main-end
+                nav.swim-menu.main-nav#main-nav
+                    ul.main-menu.main-list#main-menu
+                        li.list-menu
+                            p.link-menu#conocenos Conócenos
+                        li.list-menu
+                            p.link-menu#servicios Servicios
+                        li.list-menu
+                            p.link-menu#fotos Fotos
+                        li.list-menu
+                            p.link-menu#encuentranos Encuéntranos
+    .banner-text.container#banner-text
+        .banner-message.l-100.column
+            .banner-box-title.l-100
+                h1.banner-title.l-65 Disfruta los mejores juegos online 
+                                | en nuestro lan gaming!
+            .banner-box-title.l-100
+                p.short-text y despierta el gamer que llevas dentro.
+        .banner-button.l-100.column
+            button(type='button').button-game#button-game Ver juegos
+
+

@@ -1,0 +1,24 @@
+mixin listadoFooter(title, ...lists)
+    .content-box.l-25.m-50.s-100
+        h2.footer-box-title= title
+        ul.list-footer
+         each list in lists
+            li.list-footer-child.icon-right-dir
+                a(href="#").footer-link= list
+.subfooter
+    .container
+        .subfooter-content.column.l-100
+            +listadoFooter('JUEGOS', 'Dota2', 'League of Legends', 'Rakion', 'Wolfteam', 'Counter Strike GO')     
+            +listadoFooter('PCS', 'Mouse', 'Teclado gamer', 'Auricular Gamer', 'Pc de gama media')     
+            +listadoFooter('MINITIENDA', 'Contamos con una tienda exclusivamente para ustedes')
+            .content-box.l-25.m-50.s-100
+                h2.footer-box-title CONTÁCTANOS
+                    ul.list-footer
+                        li.list-footer-child.icon-location
+                            a(href="#").footer-link Mz R Lt20 comt 35 Mateo Pumacahua - chorrillos
+                        li.list-footer-child.icon-phone-squared
+                            a(href="#").footer-link 01258-0471
+footer.footer
+    .container.main-footer
+        .title-footer.column.l-100
+            h2.title-main-footer ms150 LAN GAMING

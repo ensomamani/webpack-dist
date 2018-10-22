@@ -1,0 +1,34 @@
+.subfooter {
+    margin-bottom: 40px;
+}
+.subfooter-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-box-title {
+    @include font(16px, 600, normal, #7f7a70);   
+}
+.content-box {
+    margin: 15px 0;
+}
+.list-footer {
+    margin-top: 10px;
+    list-style: none;
+}
+.list-footer-child {
+    color: #7f7a70;
+    font-size: 14px;
+}
+.footer-link {
+    @include font(13px, 300, normal, #7f7a70);
+}
+.footer {
+    width: 100%;
+    background: #101010;
+}
+.title-main-footer {
+    @include font(14px, 600, normal, #7f7a70);
+    line-height: 14px;
+    padding: 1em 0;
+    text-align: center;
+}
