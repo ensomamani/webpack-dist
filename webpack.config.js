@@ -18,17 +18,17 @@ const webpack = require('webpack')
 // //---------------------------------------
 module.exports = {
     resolve: {
-        extensions: [".js", ".json", ".css"]
+        extensions: [".js", ".json", ".css",".scss"]
     },
     entry: ['./dev/src/js/app.js'], //entrada del archivo a compilar
     output: {
-        path: path.resolve(__dirname, './dist'), //salida de todos los archivo a compilar
-        filename: 'js/app.js', //nombre del archivo final compilado
-        publicPath: '/dist/' //siempre debe ir un slash al final
+        path: path.resolve(__dirname, 'dist/'), //salida de todos los archivo a compilar
+        filename: 'js/app.js'//nombre del archivo final compilado
+        // publicPath: '/' // para que entienda donde es la raiz
     },
     devtool: "source-map",
     devServer: { //servidor local para visualizar la programacion
-        contentBase: path.join(__dirname, "./dist/"),
+        contentBase: path.join(__dirname, "dist/"),
         compress: true,
         port: 7070,
         open: true
@@ -58,13 +58,19 @@ module.exports = {
                     fallback: "style-loader",
                     use: [
                         {
-                            loader: 'css-loader'
+                            loader: 'css-loader',
+                            options: {
+                                sourceMap: true //para que ubique la direccion que proporcionamos en sass se equivale al css
+                            }
                         },
                         {
-                            loader: 'sass-loader'
+                            loader: 'sass-loader',
+                            options: {
+                                sourceMap: true //para que ubique la direccion que proporcionamos en sass se equivale al css
+                            }
                         }
-                    ],
-                    publicPath: 'dev/dist/css/' //aqui es donde se asegura que el archivo va compilar 
+                    ]
+                    // publicPath: '/css/' //aqui es donde se asegura que el archivo va compilar 
                 })
             },
             {
@@ -79,7 +85,7 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             name: '[hash:12].[ext]',
-                            publicPath: '/dist/', //le decimos en que carpeta principal estara junto con el css y html
+                            // publicPath: '/dist/', //le decimos en que carpeta principal estara junto con el css y html
                             outputPath: 'img/' // en la carpeta img se guardara las imagenes
                         }
                     },
@@ -101,7 +107,7 @@ module.exports = {
         //     files: ['dev/dist/html/index.html']
         // }),
         new ExtractTextPlugin({ //para generar el link de css y minificar
-            filename: 'css/style.css'
+            filename: 'style.css'
             // disable: false,
             // allChunks: true
         }),
@@ -109,7 +115,7 @@ module.exports = {
         //     filename: 'css/fonts.css'
         // }),
         new HtmlWebpackPlugin({ //para generar el html y minificar
-            filename: 'html/index.html',
+            filename: 'index.html',
             title: 'amazing',
             template: "./dev/src/templates/index.pug",
             // minify: {
