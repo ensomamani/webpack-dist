@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+/* Variables ed-grid */
+$cssCore: false;
+$cssHelpers: true;
+$devMode: false;
+
+/* Colores */
+$colorPrimary: #ffffff;
+$colorSecondary: #B67D00;
+$colorAlternative-text: #636363;
+
+//Quitar padding y margin a todo
+*{
+    padding: 0;
+    margin: 0;
+}
+
+//asignando estilo de fuente y color en body
+body {
+    font-family: 'Muli', sans-serif;
+    background: #000;
+}
+
+
+@import 'mixins/font';
+@import 'edgrid/ed-grid';
+@import 'includes/header';
+@import 'includes/conocenos';
+@import 'includes/promocion';
+@import 'includes/pcs';
+@import 'includes/encuentranos';
+@import 'includes/games';
+@import 'includes/footer';
+@import 'includes/banner-disfruta';
+@import 'includes/galeria';
+@import 'includes/modal';
+@import 'includes/responsive';
+//@import '../fonts/style/fontello';
+
+
